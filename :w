@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>juanedflores blog</title>
+    <link rel="stylesheet" href="./css/uikit.min.css" />
+    <link rel="stylesheet" href="./css/blog_style.css" />
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/uikit-icons.min.js"></script>
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', function (event) {
+        hash = document.location.hash;
+        console.log('Hash: ' + hash);
+
+        if (hash == '') {
+          var filter = document.querySelector('.js-filter');
+          var filterBar = document.querySelector('#filter-bar');
+          var activeFilter = document.querySelector('.featured');
+          UIkit.filter(filterBar, {
+            target: filter,
+            selActive: activeFilter,
+          });
+        }
+      });
+    </script>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body class="uk-margin-large-bottom">
+    <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
+      <!-- NAV AND HEADING -->
+      <div
+        class="uk-background-cover uk-background-blend-multiply uk-flex"
+        style="background-image: url(resources/textured_black_sharpened.png); height: 50px"
+        uk-sticky>
+        <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-filter">
+          <span uk-icon="icon: menu" style="color: white"></span>
+        </button>
+
+        <!-- HEADING -->
+        <h2
+          class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+          style="font-family: 'Cormorant', serif; color: white; left: 60px">
+          <a class="uk-text" style="color: white" href="./blog.html">Art, Technology, and Non-Solids</a>
+          &nbsp;&nbsp;
+          <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
+        </h2>
+      </div>
+
+      <div class="uk-container" uk-filter="target: .js-filter; selActive: .featured">
+        <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: slide;">
+          <div class="uk-offcanvas-bar">
+            <ul uk-accordion>
+              <li>
+                <a class="uk-accordion-title" href="#">Filter</a>
+                <div class="uk-accordion-content">
+                  <ul id="filter-bar" class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
+                    <li uk-filter-control>
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #ffffff">All</span>
+                      </a>
+                    </li>
+
+                    <li class="featured" uk-filter-control=".tag-featured">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #fff202">
+                          <span uk-icon="icon: star"></span>
+                        </span>
+                      </a>
+                    </li>
+
+                    <hr />
+
+                    <!-- START TAGS -->
+                    <!-- <li uk-filter-control=".tag-graphics"> -->
+                    <!--   <a href="#"> -->
+                    <!--     <span class="uk-label" style="background-color: #d0f24e; color: white">graphics</span> -->
+                    <!--   </a> -->
+                    <!-- </li> -->
+                    <!-- END TAGS -->
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="uk-accordion-title" href="#">About This Blog</a>
+                <div class="uk-accordion-content">
+                  <p style="color: white">A blog about Art, Technology, and Non-Solids.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOG ENTRIES -->
+      <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
+        <!-- Pe Lang -->
+        <li class="tag-productivity tag-featured">
+          <a href="https://juanedflores.github.io/art_tech_blog/Positioning_Systems.html#disqus_thread">Link</a>
+          <a href="./Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html">
+            <div
+              class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+              style="border: 1px solid #000000; border-radius: 3px"
+              uk-grid>
+              <div class="uk-background-cover" uk-img>
+                <div class="uk-card-body">
+                  <h3 class="uk-card-title">
+                    Pe Lang - Positioning Systems I
+                    <span class="uk-text-warning">(WIP)</span>
+                  </h3>
+                  <span>last modified: 2022-01-07</span>
+                  <p style="color: black">I detail the features of this blog, the intentions, and the code that makes it work.</p>
+                  <span class="uk-label" style="background-color: #dbd276">Productivity</span>
+                </div>
+              </div>
+              <div class="uk-card-media-left uk-cover-container">
+                <img src="./Blog_Entries/More_About_This_Blog/cover/cover.png" alt="" uk-cover />
+                <canvas width="600" height="400"></canvas>
+              </div>
+            </div>
+          </a>
+        </li>
+        <!-- BLOG ENTRIES END -->
+      </ul>
+      <script id="dsq-count-scr" src="//juanedflores-blog.disqus.com/count.js" async></script>
+    </div>
+    <!-- </div> -->
+  </body>
+</html>
