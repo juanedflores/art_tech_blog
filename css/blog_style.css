@@ -36,6 +36,7 @@ p {
 
 ul li {
   font-family: 'SegoeUILight';
+  padding: 0;
 }
 
 .title {
@@ -77,11 +78,17 @@ code.hljs {
   background-color: #181914;
 }
 
+.entry {
+  cursor: pointer;
+  padding: 0;
+  margin: 1em;
+}
+
 /**
  * For mobile devices
  */
 @media screen and (max-width: 760px) {
   h2 {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 }

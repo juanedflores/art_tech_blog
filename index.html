@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="./css/blog_style.css" />
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
     <script charset="utf-8">
       document.addEventListener('DOMContentLoaded', function (event) {
         hash = document.location.hash;
@@ -22,6 +29,11 @@
             selActive: activeFilter,
           });
         }
+      });
+
+      $('div').click(function () {
+        window.location = $(this).find('a').attr('href');
+        return false;
       });
     </script>
     <!-- FAVICON -->
@@ -52,7 +64,7 @@
       </div>
 
       <div class="uk-container" uk-filter="target: .js-filter; selActive: .featured">
-        <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: slide;">
+        <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: none;">
           <div class="uk-offcanvas-bar">
             <ul uk-accordion>
               <li>
@@ -65,22 +77,32 @@
                       </a>
                     </li>
 
-                    <li class="featured" uk-filter-control=".tag-featured">
-                      <a href="#">
-                        <span class="uk-label" style="background-color: #fff202">
-                          <span uk-icon="icon: star"></span>
-                        </span>
-                      </a>
-                    </li>
-
                     <hr />
 
                     <!-- START TAGS -->
-                    <!-- <li uk-filter-control=".tag-graphics"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span class="uk-label" style="background-color: #d0f24e; color: white">graphics</span> -->
-                    <!--   </a> -->
-                    <!-- </li> -->
+                    <li uk-filter-control=".tag-liquid">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #578fd6; color: white">Liquid</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-precision">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #57d6d6; color: white">Precision</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-cnc">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #d69757; color: white">CNC</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-hydrophobic">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #6857d6; color: white">Hydrophobic Surface</span>
+                      </a>
+                    </li>
                     <!-- END TAGS -->
                   </ul>
                 </div>
@@ -101,28 +123,32 @@
         </div>
       </div>
 
-      <!-- <embed src="https://en.wikipedia.org/wiki/Non-solid" width="100%" height="200" /> -->
-
       <!-- BLOG ENTRIES -->
-      <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
+      <ul class="js-filter uk-list uk-width-2-3@s uk-align-center" uk-grid>
         <!-- Pe Lang -->
-        <li class="tag-productivity tag-featured">
-          <a href="https://juanedflores.github.io/art_tech_blog/Positioning_Systems.html#disqus_thread">Link</a>
-          <a href="./Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html">
+        <li class="tag-productivity tag-featured tag-liquid tag-precision tag-cnc tag-hydrophobic" style="padding: 0">
+          <div class="entry">
             <div
               class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
               style="border: 1px solid #000000; border-radius: 3px"
+              onclick="location.href='./Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html'"
               uk-grid>
               <div class="uk-background-cover" uk-img>
                 <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    Pe Lang - Positioning Systems I
-                    <span class="uk-text-warning">(WIP)</span>
-                  </h3>
+                  <h3 class="uk-card-title">Pe Lang - Positioning Systems I (2009-2011)</h3>
                   <span>last modified: 2022-06-02</span>
                   <!-- <p style="color: black">I detail the features of this blog, the intentions, and the code that makes it work.</p> -->
                   <hr />
-                  <span class="uk-label" style="background-color: #dbd276">Water</span>
+                  <span class="uk-label" style="background-color: #578fd6">Liquid</span>
+                  <span class="uk-label" style="background-color: #57d6d6">Precision</span>
+                  <span class="uk-label" style="background-color: #d69757">CNC</span>
+                  <span class="uk-label" style="background-color: #6857d6">Hydrophobic Surface</span>
+                  <br />
+                  <br />
+                  <a
+                    href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html#disqus_thread">
+                    Link
+                  </a>
                 </div>
               </div>
               <div class="uk-card-media-left uk-cover-container">
@@ -130,7 +156,7 @@
                 <canvas width="600" height="400"></canvas>
               </div>
             </div>
-          </a>
+          </div>
         </li>
 
         <!-- Pe Lang -->
@@ -143,10 +169,7 @@
               uk-grid>
               <div class="uk-background-cover" uk-img>
                 <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    Rafael Lozano-Hemmer - Cloud Display
-                    <span class="uk-text-warning">(WIP)</span>
-                  </h3>
+                  <h3 class="uk-card-title">Rafael Lozano-Hemmer - Cloud Display (2019)</h3>
                   <span>last modified: 2022-06-02</span>
                   <!-- <p style="color: black">I detail the features of this blog, the intentions, and the code that makes it work.</p> -->
                   <hr />
@@ -211,10 +234,9 @@
             </div>
           </a>
         </li>
-        <!-- BLOG ENTRIES END -->
       </ul>
+      <!-- BLOG ENTRIES END -->
       <script id="dsq-count-scr" src="//juanedflores-blog.disqus.com/count.js" async></script>
     </div>
-    <!-- </div> -->
   </body>
 </html>
