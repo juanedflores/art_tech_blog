@@ -76,24 +76,30 @@
         <hr />
       </div>
       <!-- BLOG POST CONTENT -->
-      <div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll">
+
+      <div id="blog_post" class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll">
         <div id="disqus_thread"></div>
         <script>
           /**
            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
           var disqus_config = function () {
-            let pagetitle = 'Pe Lang - Positioning Systems I';
+            let pagetitle = 'Positioning Systems I';
+            this.page.title = 'Positioning Systems I';
             this.page.url =
-              'https://juanedflores.github.io/art_tech_blog/' + pagetitle.replace(/ /g, '_') + '/' + pagetitle.replace(/ /g, '_') + '.html';
+              'https://juanedflores.github.io/art_tech_blog/Blog_Entries/' +
+              pagetitle.replace(/ /g, '_') +
+              '/' +
+              pagetitle.replace(/ /g, '_') +
+              '.html';
             this.page.identifier = '/' + pagetitle.replace(/ /g, '_');
+            console.log('testing..');
           };
-
           (function () {
             // DON'T EDIT BELOW THIS LINE
             var d = document,
               s = d.createElement('script');
-            s.src = 'https://juanedflores-blog.disqus.com/embed.js';
+            s.src = 'https://art-tech-water-blog.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
           })();
@@ -104,13 +110,5 @@
         </noscript>
       </div>
     </div>
-
-    <script charset="utf-8">
-      var divs = document.querySelectorAll('p > code');
-      console.log(divs.length);
-      for (var i = 0; i < divs.length; i++) {
-        divs[i].classList.add('plaintext');
-      }
-    </script>
   </body>
 </html>

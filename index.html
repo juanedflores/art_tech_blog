@@ -15,7 +15,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;900&family=Roboto+Mono:wght@100&display=swap"
+      rel="stylesheet" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
     <script charset="utf-8">
       document.addEventListener('DOMContentLoaded', function (event) {
@@ -42,7 +50,8 @@
     <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon" />
   </head>
 
-  <body class="uk-margin-large-bottom">
+  <body class="uk-margin-large-bottom" style="overflow: hidden">
+    <script src="./sketch.js"></script>
     <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
       <!-- NAV AND HEADING -->
       <div
@@ -124,119 +133,127 @@
       </div>
 
       <!-- BLOG ENTRIES -->
-      <ul class="js-filter uk-list uk-width-2-3@s uk-align-center" uk-grid>
-        <!-- Pe Lang -->
-        <li class="tag-productivity tag-featured tag-liquid tag-precision tag-cnc tag-hydrophobic" style="padding: 0">
-          <div class="entry">
-            <div
-              class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-              style="border: 1px solid #000000; border-radius: 3px"
-              onclick="location.href='./Blog_Entries/Positioning_Systems_I/Positioning_Systems_I.html'"
-              uk-grid>
-              <div class="uk-background-cover" uk-img>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">Pe Lang - Positioning Systems I (2009-2011)</h3>
-                  <span>last modified: 2022-06-02</span>
-                  <hr />
-                  <span class="uk-label" style="background-color: #578fd6">Liquid</span>
-                  <span class="uk-label" style="background-color: #57d6d6">Precision</span>
-                  <span class="uk-label" style="background-color: #d69757">CNC</span>
-                  <span class="uk-label" style="background-color: #6857d6">Hydrophobic Surface</span>
-                  <br />
-                  <br />
-                  <a
-                    href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Positioning_Systems_I/Positioning_Systems_I.html#disqus_thread">
-                    Link
-                  </a>
+      <!-- <div class="uk-panel uk-panel-scrollable .uk-height-1-1" uk-height-viewport="expand: true"> -->
+      <div class="uk-panel uk-panel-scrollable .uk-height-1-1 .uk-overflow-hidden" style="border: none" uk-height-viewport="expand: false">
+        <ul class="js-filter uk-list uk-width-2-3@s uk-align-center" id="postsDiv">
+          <!-- Pe Lang -->
+          <li class="tag-productivity tag-featured tag-liquid tag-precision tag-cnc tag-hydrophobic" style="padding: 0">
+            <div class="entry">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid #000000; border-radius: 3px"
+                onclick="location.href='./Blog_Entries/Positioning_Systems_I/Positioning_Systems_I.html'"
+                uk-grid>
+                <div class="uk-background-cover" uk-img>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Pe Lang - Positioning Systems I (2009-2011)</h3>
+                    <span>last modified: 2022-06-02</span>
+                    <hr />
+                    <span class="uk-label" style="background-color: #578fd6">Liquid</span>
+                    <span class="uk-label" style="background-color: #57d6d6">Precision</span>
+                    <span class="uk-label" style="background-color: #d69757">CNC</span>
+                    <span class="uk-label" style="background-color: #6857d6">Hydrophobic Surface</span>
+                    <br />
+                    <br />
+                    <a
+                      href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Positioning_Systems_I/Positioning_Systems_I.html#disqus_thread">
+                      Link
+                    </a>
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container">
+                  <img src="./Blog_Entries/Positioning_Systems_I/cover/cover.png" alt="" uk-cover />
+                  <canvas width="600" height="400"></canvas>
                 </div>
               </div>
-              <div class="uk-card-media-left uk-cover-container">
-                <img src="./Blog_Entries/Positioning_Systems_I/cover/cover.png" alt="" uk-cover />
-                <canvas width="600" height="400"></canvas>
-              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <!-- Rafael Lozano Hemmer -->
-        <li class="tag-productivity tag-featured">
-          <a href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Positioning_Systems/Positioning_Systems.html#disqus_thread">
-            Link
-          </a>
-          <a href="./Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html">
-            <div
-              class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-              style="border: 1px solid #000000; border-radius: 3px"
-              uk-grid>
-              <div class="uk-background-cover" uk-img>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">Rafael Lozano-Hemmer - Cloud Display (2019)</h3>
-                  <span>last modified: 2022-06-02</span>
-                  <!-- <p style="color: black">I detail the features of this blog, the intentions, and the code that makes it work.</p> -->
-                  <hr />
-                  <span class="uk-label" style="background-color: #dbd276">Water</span>
+          <!-- Rafael Lozano Hemmer -->
+          <li class="tag-productivity tag-featured tag-liquid tag-precision tag-cnc tag-hydrophobic" style="padding: 0">
+            <div class="entry">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid #000000; border-radius: 3px"
+                onclick="location.href='./Blog_Entries/Cloud_Display/Cloud_Display.html'"
+                uk-grid>
+                <div class="uk-background-cover" uk-img>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Rafael Lozano-Hemmer - Cloud Display (2019)</h3>
+                    <span>last modified: 2022-06-02</span>
+                    <hr />
+                    <span class="uk-label" style="background-color: #578fd6">Liquid</span>
+                    <span class="uk-label" style="background-color: #57d6d6">Precision</span>
+                    <span class="uk-label" style="background-color: #d69757">CNC</span>
+                    <span class="uk-label" style="background-color: #6857d6">Hydrophobic Surface</span>
+                    <br />
+                    <br />
+                    <a href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Cloud_Display/Cloud_Display.html#disqus_thread">
+                      Link
+                    </a>
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container">
+                  <img src="./Blog_Entries/Cloud_Display/cover/cover.png" alt="" uk-cover />
+                  <canvas width="600" height="400"></canvas>
                 </div>
               </div>
-              <div class="uk-card-media-left uk-cover-container">
-                <img src="./Blog_Entries/Rafael_Lozano_Hemmer/cover/cover.png" alt="" uk-cover />
-                <canvas width="600" height="400"></canvas>
-              </div>
             </div>
-          </a>
-        </li>
+          </li>
 
-        <!-- Pe Lang -->
-        <li class="tag-productivity tag-featured">
-          <a href="https://juanedflores.github.io/art_tech_blog/Positioning_Systems.html#disqus_thread">Link</a>
-          <a href="./Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html">
-            <div
-              class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-              style="border: 1px solid #000000; border-radius: 3px"
-              uk-grid>
-              <div class="uk-background-cover" uk-img>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    Ivan Abreu - M(RPM) Mexican National Anthem
-                    <span class="uk-text-warning">(WIP)</span>
-                  </h3>
-                  <span>last modified: 2022-06-02</span>
-                  <hr />
-                  <span class="uk-label" style="background-color: #dbd276">Water</span>
+          <!-- Pe Lang -->
+          <li class="tag-productivity tag-featured">
+            <a href="https://juanedflores.github.io/art_tech_blog/Positioning_Systems.html#disqus_thread">Link</a>
+            <a href="./Blog_Entries/Pe_Lang_Positioning_Systems_I/Positioning_Systems.html">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid #000000; border-radius: 3px"
+                uk-grid>
+                <div class="uk-background-cover" uk-img>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      Ivan Abreu - M(RPM) Mexican National Anthem
+                      <span class="uk-text-warning">(WIP)</span>
+                    </h3>
+                    <span>last modified: 2022-06-02</span>
+                    <hr />
+                    <span class="uk-label" style="background-color: #dbd276">Water</span>
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container">
+                  <img src="./Blog_Entries/Ivan_Abreu/cover/cover.png" alt="" uk-cover />
+                  <canvas width="600" height="400"></canvas>
                 </div>
               </div>
-              <div class="uk-card-media-left uk-cover-container">
-                <img src="./Blog_Entries/Ivan_Abreu/cover/cover.png" alt="" uk-cover />
-                <canvas width="600" height="400"></canvas>
-              </div>
-            </div>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <!-- Olafur Eliasson -->
-        <li class="tag-productivity tag-featured">
-          <a href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Olafur_Eliasson_Riverbed/Riv#disqus_thread">Link</a>
-          <a href="./Blog_Entries/Olafur_Eliasson_Riverbed/Riverbed.html">
-            <div
-              class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-              style="border: 1px solid #000000; border-radius: 3px"
-              uk-grid>
-              <div class="uk-background-cover" uk-img>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">Olafur Eliasson - Riverbed (2014)</h3>
-                  <span>last modified: 2022-06-02</span>
-                  <hr />
-                  <span class="uk-label" style="background-color: #dbd276">Water</span>
+          <!-- Olafur Eliasson -->
+          <li class="tag-productivity tag-featured">
+            <a href="https://juanedflores.github.io/art_tech_blog/Blog_Entries/Olafur_Eliasson_Riverbed/Riv#disqus_thread">Link</a>
+            <a href="./Blog_Entries/Olafur_Eliasson_Riverbed/Riverbed.html">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid #000000; border-radius: 3px"
+                uk-grid>
+                <div class="uk-background-cover" uk-img>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Olafur Eliasson - Riverbed (2014)</h3>
+                    <span>last modified: 2022-06-02</span>
+                    <hr />
+                    <span class="uk-label" style="background-color: #dbd276">Water</span>
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container">
+                  <img src="./Blog_Entries/Olafur_Eliasson_Riverbed/cover/cover.png" alt="" uk-cover />
+                  <canvas width="600" height="400"></canvas>
                 </div>
               </div>
-              <div class="uk-card-media-left uk-cover-container">
-                <img src="./Blog_Entries/Olafur_Eliasson_Riverbed/cover/cover.png" alt="" uk-cover />
-                <canvas width="600" height="400"></canvas>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <!-- BLOG ENTRIES END -->
+            </a>
+          </li>
+        </ul>
+        <!-- BLOG ENTRIES END -->
+      </div>
     </div>
     <script id="dsq-count-scr" src="//art-tech-water-blog.disqus.com/count.js" async></script>
   </body>
