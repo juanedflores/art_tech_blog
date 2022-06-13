@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="../../css/pojoaque.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Roboto:ital,wght@0,700;1,900&display=swap"
+      rel="stylesheet" />
+
     <script charset="utf-8">
       document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('pre code').forEach((block) => {
@@ -54,9 +60,7 @@
       <h2
         class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
         style="font-family: 'Cormorant', serif; color: white; left: 60px">
-        <a class="uk-text" style="color: white; font-weight: normal; font-size: 1em" href="../../index.html">
-          Art, Technology, and Non-Solids
-        </a>
+        <a class="uk-text" style="color: white; font-weight: normal; font-size: 1em" href="../../index.html">Art, Technology, and Water</a>
         &nbsp;&nbsp;
         <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
       </h2>
@@ -69,31 +73,55 @@
           <a href="../../index.html" uk-icon="icon: home"></a>
         </div>
       </div>
+
       <div class="uk-container uk-width-1-2@m" style="padding-top: 1.2em; padding-bottom: 1.2em">
-        <span class="title">Pe Lang - Positioning Systems I</span>
-        <br />
-        <span style="font-size: 1em; color: #767676">Date created: June 2nd, 2022</span>
-        <hr />
+        <article>
+          <span class="uk-article-title uk-text-primary" style="font-family: 'Roboto', sans-serif">Ivan Abreu</span>
+          <br />
+          <span class="uk-meta-text uk-text-muted">
+            (Havana,1967, naturalized Mexican citizen), artist and creative technologist who works and lives in Mexico city.
+          </span>
+          <hr />
+        </article>
       </div>
       <!-- BLOG POST CONTENT -->
-      <div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll">
+      <div id="blog_post" class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll">
+        <h1 class="uk-heading-small uk-heading-bullet" style="font-family: 'Roboto', sans-serif">m(rpm)</h1>
+        <p>Vinyl disc made of frozen water from the Spree River (Berlin) The disc plays the German national anthem.</p>
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/BxpYwgLpja8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <div class="uk-text-center">
+          <a href="https://www.ivanabreu.net/?pag=4#mrpmgermany">(Website)</a>
+        </div>
+        <br />
+
         <div id="disqus_thread"></div>
         <script>
           /**
            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
           var disqus_config = function () {
-            let pagetitle = 'Pe Lang - Positioning Systems I';
+            let pagetitle = 'Ivan Abreu';
+            this.page.title = 'Ivan Abreu';
             this.page.url =
-              'https://juanedflores.github.io/art_tech_blog/' + pagetitle.replace(/ /g, '_') + '/' + pagetitle.replace(/ /g, '_') + '.html';
+              'https://juanedflores.github.io/art_tech_blog/Blog_Entries/' +
+              pagetitle.replace(/ /g, '_') +
+              '/' +
+              pagetitle.replace(/ /g, '_') +
+              '.html';
             this.page.identifier = '/' + pagetitle.replace(/ /g, '_');
           };
-
           (function () {
             // DON'T EDIT BELOW THIS LINE
             var d = document,
               s = d.createElement('script');
-            s.src = 'https://juanedflores-blog.disqus.com/embed.js';
+            s.src = 'https://art-tech-water-blog.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
           })();
@@ -105,12 +133,12 @@
       </div>
     </div>
 
-    <script charset="utf-8">
-      var divs = document.querySelectorAll('p > code');
-      console.log(divs.length);
-      for (var i = 0; i < divs.length; i++) {
-        divs[i].classList.add('plaintext');
-      }
-    </script>
+    <!-- <script charset="utf-8"> -->
+    <!--   var divs = document.querySelectorAll('p > code'); -->
+    <!--   console.log(divs.length); -->
+    <!--   for (var i = 0; i < divs.length; i++) { -->
+    <!--     divs[i].classList.add('plaintext'); -->
+    <!--   } -->
+    <!-- </script> -->
   </body>
 </html>
